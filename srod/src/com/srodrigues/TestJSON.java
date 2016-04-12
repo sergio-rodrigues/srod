@@ -26,7 +26,11 @@ public class TestJSON {
          return passengers;
       }
 
-      protected Passenger[] passengers = new Passenger[0];
+      public void setPassengers(Passenger[] passengers) {
+		this.passengers = passengers;
+	}
+
+	protected Passenger[] passengers = new Passenger[0];
 
       public Flight() {}
 
@@ -130,7 +134,8 @@ public class TestJSON {
       final Flight flight = (Flight) Reflection.convert(Flight.class, o);
 
       System.err.println(flight);
-      System.err.println(flight.passengers[3]);
+      System.err.println(flight.passengers[3]); 
+      System.err.println(flight.passengers[3].getFlight() == flight );
    }
 
 }

@@ -14,6 +14,7 @@ import org.eclipse.paho.client.mqttv3.MqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
+import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import com.srodrigues.srod.ServiceProvider;
 import com.srodrigues.srod.exception.SRODException;
@@ -40,7 +41,7 @@ public class MQTTProtocol implements TransportProtocol {
 
 		this.serializator = serializator;
 		this.topic = topic;
-		this.client = new MqttClient(broker, MqttClient.generateClientId());
+		this.client = new MqttClient(broker, MqttClient.generateClientId(), new MemoryPersistence());
 
 		this.connOpts = new MqttConnectOptions();
 		if (username != null && !"".equals(username)) {
