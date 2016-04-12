@@ -29,5 +29,12 @@ public class MethodResponse implements Serializable {
 	public int getId() {
 		return id;
 	}
+	
+	public void setValue(Object value) {
+		this.value = value;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 }
