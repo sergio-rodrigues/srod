@@ -43,5 +43,20 @@ public class MethodRequest implements Serializable {
 	public Object[] getArgs() {
 		return args;
 	}
+	
+	public void setService(String service) {
+		this.service = service;
+	}
 
+	public void setMethod(String method) {
+		this.method = method;
+	}
+
+	public void setArgs(Object[] args) {
+		this.args = args;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }

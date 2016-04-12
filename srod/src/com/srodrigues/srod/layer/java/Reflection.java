@@ -110,29 +110,28 @@ public class Reflection {
 		}
 
 		// Number Hierarchy
+		if (clazz == Boolean.class || clazz == boolean.class) {
+			return Boolean.parseBoolean(object.toString());
+		}
+		if (clazz == Byte.class || clazz == byte.class) {
+			return Byte.parseByte(object.toString());
+		}
+		if (clazz == Double.class || clazz == double.class) {
+			return Double.parseDouble(object.toString());
+		}
+		if (clazz == Float.class || clazz == float.class) {
+			return Float.parseFloat(object.toString());
+		}
+		if (clazz == Integer.class || clazz == int.class) {
+			return Integer.parseInt(object.toString());
+		}
+		if (clazz == Long.class || clazz == long.class) {
+			return Long.parseLong(object.toString());
+		}
+		if (clazz == Short.class || clazz == short.class) {
+			return Short.parseShort(object.toString());
+		}
 		if (Number.class.isAssignableFrom(clazz)) {
-			if (clazz == Boolean.class || clazz == boolean.class) {
-				return Boolean.parseBoolean(object.toString());
-			}
-			if (clazz == Byte.class || clazz == byte.class) {
-				return Byte.parseByte(object.toString());
-			}
-			if (clazz == Double.class || clazz == double.class) {
-				return Double.parseDouble(object.toString());
-			}
-			if (clazz == Float.class || clazz == float.class) {
-				return Float.parseFloat(object.toString());
-			}
-			if (clazz == Integer.class || clazz == int.class) {
-				return Integer.parseInt(object.toString());
-			}
-			if (clazz == Long.class || clazz == long.class) {
-				return Long.parseLong(object.toString());
-			}
-			if (clazz == Short.class || clazz == short.class) {
-				return Short.parseShort(object.toString());
-			}
-
 			if (clazz == BigDecimal.class) {
 				return new BigDecimal(object.toString());
 			}
